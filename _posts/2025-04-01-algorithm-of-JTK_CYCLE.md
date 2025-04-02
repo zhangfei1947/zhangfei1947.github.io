@@ -14,23 +14,24 @@ doi: [10.1177/0748730410379711](https://doi.org/10.1177/0748730410379711)
 
 JTK_CYCLE is a classic and widely used software to identify rhythmic expressed genes through high throughput technologies.
 
-## 1. Jonckheere-Terpstra(JT) test
+## 1. Jonckheere-Terpstra (JT) Test
 
 
 $$
 U = \sum_{i=1}^{k-1} \sum_{j=i+1}^k U_{ij}
 $$
 
-For large sample, under H<sub>0</sub>
+For large sample, under $H_0$
 
 $$
 Z = \frac{U - E(U)}{\sqrt{\text{Var}(U)}}
 $$
 
-## 2. Kendall's $$\tau$$
+## 2. Kendall's $\tau$
 
 
 ## 3. JTK
 
 
-## 4. Harding algorithm
+## 4. Harding Algorithm
+
