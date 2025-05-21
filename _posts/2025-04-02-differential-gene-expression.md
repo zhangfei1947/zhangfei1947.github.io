@@ -45,8 +45,8 @@ $$
 
 **Variance:** $Var(X) = np(1-p)$
 
-\begin{equation}
-\begin{split}
+$$
+\begin{align*}
 	Var(X) & = E[X^2] - (E[X])^2 \\
 	& = E[X(X-1)] + E[X] - (E[X])^2 \\
 	& = \displaystyle\sum_{x=0}^{n} x(x-1)\binom{n}{x}p^xq^{n-x} + np - (np)^2 \\
@@ -54,8 +54,8 @@ $$
 	& = n(n-1)p^2 \displaystyle\sum_{x=2}^{n} \frac{(n-2)!}{(x-2)!(n-x)!} p^{x-2}q^{n-x} + np - (np)^2 \\
 	& = (np)^2 - np^2 + np - (np)^2 \\
 	& = np(1-p)
-\end{split}
-\end{equation}
+\end{align*}
+$$
 
 ## 2. Poisson Distribution
 From Binomial Distribution:
@@ -79,8 +79,10 @@ From Binomial Distribution:
 1. Probability of get $X$ times failures before the $r$-th success
 
 $$
+\begin{gathered}
 P(X=x) = \binom{x+r-1}{r-1}p^r(1-p)^x\ \ x=0,1,2... \\
 \binom{x+r-1}{r-1} = (-1)^x \binom{-r}{x}
+\end{gathered}
 $$
 
 **Mean:** $\mu = \frac{r(1-p)}{p}$
@@ -88,7 +90,7 @@ $$
 **Variance:** $Var(X) = \frac{r(1-p)}{p^2}$
 
 
-### 3.1. NB is actually a mixture model of Poisson and Gamma
+### 3.1. NB is a mixture model of Poisson and Gamma
 
 $$
 X|\lambda \sim Poisson(\lambda): \ \ P(X=x) = \frac{e^{-\lambda}\lambda^x}{x!} \\
