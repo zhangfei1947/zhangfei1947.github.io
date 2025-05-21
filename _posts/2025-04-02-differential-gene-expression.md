@@ -47,12 +47,12 @@ $$
 
 $$
 \begin{align*}
-	Var(X) & = E[X^2] - (E[X])^2 \\
-	& = E[X(X-1)] + E[X] - (E[X])^2 \\
-	& = \displaystyle\sum_{x=0}^{n} x(x-1)\binom{n}{x}p^xq^{n-x} + np - (np)^2 \\
-	& = \displaystyle\sum_{x=2}^{n} x(x-1) \frac{n!}{x!(n-x)!} p^xq^{n-x} + np - (np)^2 \\
-	& = n(n-1)p^2 \displaystyle\sum_{x=2}^{n} \frac{(n-2)!}{(x-2)!(n-x)!} p^{x-2}q^{n-x} + np - (np)^2 \\
-	& = (np)^2 - np^2 + np - (np)^2 \\
+	Var(X) & = E[X^2] - (E[X])^2 \\\\
+	& = E[X(X-1)] + E[X] - (E[X])^2 \\\\
+	& = \displaystyle\sum_{x=0}^{n} x(x-1)\binom{n}{x}p^xq^{n-x} + np - (np)^2 \\\\
+	& = \displaystyle\sum_{x=2}^{n} x(x-1) \frac{n!}{x!(n-x)!} p^xq^{n-x} + np - (np)^2 \\\\
+	& = n(n-1)p^2 \displaystyle\sum_{x=2}^{n} \frac{(n-2)!}{(x-2)!(n-x)!} p^{x-2}q^{n-x} + np - (np)^2 \\\\
+	& = (np)^2 - np^2 + np - (np)^2 \\\\
 	& = np(1-p)
 \end{align*}
 $$
