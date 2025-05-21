@@ -7,21 +7,26 @@ tags: [statistics, algorithm, RNA-Seq]
 math: true
 render_with_liquid: false
 ---
-# Step 1 Normalization of Sequencing Depth
+# Step 1. Normalization of Library Size
 
-![Sequencing depth](/assets/img/SeqDepthVaries.png){: w="400" }
+![Sequencing depth](/assets/img/SeqDepthVaries.png){: w="350" }
 
 ## 1. Median of Ratios (DESeq2)
 
-1. Calculate 
+1. Calculate geometric mean of all genes across all samples as a "pseudo-reference"
+1. Calculate ratios of gene readcount to it's geometric mean for each sample
+1. Let the median of ratios as size factor for each sample
 
 $$ s_i = \text{median}_g \left( \frac{K_{gi}}{\left( \prod_{j} K_{gj} \right)^{1/m}} \right) $$
+
+![Sequencing depth](/assets/img/MoR_Norm.png){: w="350" }
 
 ## 2. Trimmed Mean of M-values (edgeR)
 
 
 
-# Step 2 Modeling Feature's Read Count
+
+# Step 2. Modeling Feature's Read Count
 
 ## 1. Binomial Distribution
 1. Bernoulli trail success probability $p$
@@ -56,8 +61,8 @@ $$
 From Binomial Distribution:
 
 1. Let $n \rightarrow \infty$
-2. Let $p \rightarrow 0$
-3. Meanwhile, let the expectation $\mu = np$ be a constant $\lambda$
+1. Let $p \rightarrow 0$
+1. Meanwhile, let the expectation $\mu = np$ be a constant $\lambda$
 
 $$
 P(X=x) = \frac{e^{-\lambda}\lambda^x}{x!}
@@ -69,7 +74,8 @@ $$
 
 
 ## 3. Negative Binomial Distribution
-1. Bernoulli trail success probability $p$
+From Binomial Distribution:
+
 1. Probability of get $X$ times failures before the $r$-th success
 
 $$
@@ -83,6 +89,7 @@ $$
 
 
 ### 3.1. NB is actually a mixture model of Poisson and Gamma
+
 $$
 X|\lambda \sim Poisson(\lambda): \ \ P(X=x) = \frac{e^{-\lambda}\lambda^x}{x!} \\
 \lambda \sim Gamma(\alpha, \beta): \ \ f(\lambda) = \frac{\beta^\alpha}{\Gamma(\alpha)}\lambda^{\alpha-1}e^{-\beta\lambda}
@@ -98,7 +105,7 @@ $$
 P(X=x|r,p) = \binom{x-1}{r-1}p^r(1-p)^{x-r}\ \ \ x=r, r+1, ...
 $$
 
-2. Notice that $Var(X)=E(X)/p$, it can be used to modeling overdispersion data. Let expectation $E(X) = \mu$
+1. Notice that $Var(X)=E(X)/p$, it can be used to modeling overdispersion data. Let expectation $E(X) = \mu$
 
 $$
 \mu = \frac{r(1-p)}{p} \\
@@ -126,13 +133,13 @@ $$
 Y_{gi} \sim NB(\mu_{gi}, \phi_g)
 $$
 
-## Differential Test
-### DESeq2
+# Step 3. Statistical Tests
+## DESeq2
 **Wald Test**
 
 **Likelihood Ration Test, LRT**
 
-### edgeR
+## edgeR
 **Quasi-Likelihood F Test, QLF**
 
 ## Multiple Tests Correction
