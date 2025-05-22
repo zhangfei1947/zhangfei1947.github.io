@@ -79,8 +79,8 @@ From Binomial Distribution:
 1. Probability of get $X$ times failures before the $r$-th success
 
 $$
-P(X=x) = \binom{x+r-1}{r-1}p^r(1-p)^x\ \ x=0,1,2... \\\\
- \binom{x+r-1}{r-1} = (-1)^x \binom{-r}{x}
+P(X=x) = \binom{x+r-1}{r-1}p^r(1-p)^x\ \ x=0,1,2... \\\\ 
+\binom{x+r-1}{r-1} = (-1)^x \binom{-r}{x}
 $$
 
 **Mean:** $\mu = \frac{r(1-p)}{p}$
@@ -113,10 +113,10 @@ $$
 2. Notice that $Var(X)=E(X)/p$, it can be used to modeling overdispersion data. Let expectation $E(X) = \mu$
 
 $$
-\mu = \frac{r(1-p)}{p} \\\\
-p = \frac{r}{\mu+r} \\\\
-1-p = \frac{\mu}{\mu+r} \\\\
 \begin{align*}
+\mu = \frac{r(1-p)}{p} \\\\ 
+p = \frac{r}{\mu+r} \\\\ 
+1-p = \frac{\mu}{\mu+r} \\\\ 
 Var(X) &= \frac{r(1-p)}{p^2} \\\\
 &= \mu + \frac{\mu^2}{\alpha} \ \ \ (let\ \alpha=r) \\\\
 &= \mu + \phi*\mu^2
@@ -151,11 +151,13 @@ Before performing statistical tests between $\mu_{gi}$, obtaining a better estim
 ![Init MLE](/assets/img/DGE/InitialMLE.png){: w="400" }
 
 $$
+\begin{align*}
 K_{gi} \sim NB(\mu_{gi}, \alpha_g) \\\\
 P(X=x) = \binom{x+r-1}{r-1}p^r(1-p)^x \\\\
 x = k \\\\
 r = \frac{1}{\alpha} \\\\
 p = \frac{1/\alpha}{\mu_{gi}+1/\alpha} \\\\
+\end{align*}
 $$
 
 $$
@@ -168,9 +170,11 @@ $$
 Likelihood function:
 
 $$
+\begin{align*}
 L(\alpha_g) = \prod_{i=1}^{n} P(K_{gi}) \\\\
 \ell(\alpha_g) = \sum_{i=1}^{n} log P(K_{gi}) \\\\
 \ell(\alpha_g) = \sum_{i=1}^{n} \left[ \log \Gamma\left(K_{gi} + \frac{1}{\alpha_g} \right) - \log \Gamma\left( \frac{1}{\alpha_g} \right) - K_{gi} \log(1 + \alpha_g \mu_{gi}) + K_{gi} \log \alpha_g \mu_{gi} \right]
+\end{align*}
 $$
 
 
