@@ -80,7 +80,7 @@ From Binomial Distribution:
 
 $$
 P(X=x) = \binom{x+r-1}{r-1}p^r(1-p)^x\ \ x=0,1,2... \\\\
-\binom{x+r-1}{r-1} = (-1)^x \binom{-r}{x}
+ \binom{x+r-1}{r-1} = (-1)^x \binom{-r}{x}
 $$
 
 **Mean:** $\mu = \frac{r(1-p)}{p}$
