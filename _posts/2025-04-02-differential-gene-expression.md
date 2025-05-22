@@ -91,7 +91,10 @@ $$
 #### 3.1. NB is a mixture model of Poisson and Gamma
 
 $$
-X|\lambda \sim Poisson(\lambda): \ \ P(X=x) = \frac{e^{-\lambda}\lambda^x}{x!} \\\\
+X|\lambda \sim Poisson(\lambda): \ \ P(X=x) = \frac{e^{-\lambda}\lambda^x}{x!}
+$$
+
+$$
 \lambda \sim Gamma(\alpha, \beta): \ \ f(\lambda) = \frac{\beta^\alpha}{\Gamma(\alpha)}\lambda^{\alpha-1}e^{-\beta\lambda}
 $$
 
@@ -153,6 +156,9 @@ P(X=x) = \binom{x+r-1}{r-1}p^r(1-p)^x \\\\
 x = k \\\\
 r = \frac{1}{\alpha} \\\\
 p = \frac{1/\alpha}{\mu_{gi}+1/\alpha} \\\\
+$$
+
+$$
 \begin{align*}
 P(K_{gi} = k) &= \binom{k + \frac{1}{\alpha_g} - 1}{k} \left( \frac{1}{1 + \alpha_g \mu_{gi}} \right)^{\frac{1}{\alpha_g}} \left( \frac{\alpha_g \mu_{gi}}{1 + \alpha_g \mu_{gi}} \right)^k \\\\
 &= \frac{\Gamma(k + \frac{1}{\alpha_g})}{\Gamma(k+1)\Gamma(\frac{1}{\alpha_g})} \left( \frac{1}{1 + \alpha_g \mu_{gi}} \right)^{\frac{1}{\alpha_g}} \left( \frac{\alpha_g \mu_{gi}}{1 + \alpha_g \mu_{gi}} \right)^k
